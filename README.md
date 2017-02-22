@@ -1,5 +1,5 @@
 # Components
-Repository that contains several UI Components
+Repository that contains UI Components
 ## Installation
 
 First install the required libraries (angular, bootstrap, Jquery).
