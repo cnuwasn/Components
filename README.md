@@ -1,4 +1,4 @@
-# Components
+# UI Components
 Repository that contains UI Components
 ## Installation
 
