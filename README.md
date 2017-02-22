@@ -32,7 +32,7 @@ Contributers:
 
 >The [`MIT`](https://opensource.org/licenses/MIT) License (MIT)
 >
->Copyright &copy; 2014-2015 Srinivasan Natarajan.
+>Copyright &copy; 2017 Srinivasan Natarajan.
 >
 >Permission is hereby granted, free of charge, to any person obtaining a copy
 >of this software and associated documentation files (the "Software"), to deal
