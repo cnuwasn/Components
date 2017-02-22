@@ -9,6 +9,15 @@ First install the required libraries (angular, bootstrap, Jquery).
 ```
 
 This will now install the latest version of Components.
+## Platforms
+
+Components are developed under the below catagories.
+
+* CSS3 Components with Animations
+* Angular Components
+* JQuery Components
+* Pure Javascript Components
+
 ## Demo
 
 In the demo directory you have a sample demonstration of the UI components. Just try it.
