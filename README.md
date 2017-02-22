@@ -28,9 +28,9 @@ Written by Srinivasan Natarajan [cnuwasn](https://github.com/cnuwasn)
 Contributers:
 [cnuwasn](https://github.com/cnuwasn)
 
-## License [![MIT license][license-img]][license-url]
+## License - MIT license
 
->The [`MIT`][license-url] License (MIT)
+>The [`MIT`][https://opensource.org/licenses/MIT] License (MIT)
 >
 >Copyright &copy; 2014-2015 Srinivasan Natarajan.
 >
