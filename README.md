@@ -2,10 +2,10 @@
 Repository that contains UI Components
 ## Installation
 
-First install the required libraries (angular, bootstrap, Jquery).
+First install the node js in your system
 
 ```
-# bower install
+npm install cnucompui
 ```
 
 This will now install the latest version of Components.
