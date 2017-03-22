@@ -2,59 +2,58 @@ window.onload = function () {
     if (!(document.documentMode || /Edge/.test(navigator.userAgent))) {
         let pwdInput = document.querySelectorAll('.cnuShowPassword');
         [].forEach.call(pwdInput, (item) => {
-            let eye = document.createElement('i');
-            let eyeShown = false;
-            let loseFocus = true;
-            let isFirstTimeFocus = true;
-            let isFromBlur = false;
-            eye.className = 'fa fa-eye';
-            eye.setAttribute('aria-hidden', 'true');
-            eye.style.opacity = .5; //For real browsers;
-            eye.style.filter = "alpha(opacity=50)"; //For IE;
-            eye.style.display = "none";
-            item.appendChild(eye);
+            item.eye = document.createElement('i');
+            item.eyeShown = false;
+            item.loseFocus = true;
+            item.isFirstTimeFocus = true;
+            item.isFromBlur = false;
+            item.eye.className = 'fa fa-eye';
+            item.eye.setAttribute('aria-hidden', 'true');
+            item.eye.style.opacity = .5; //For real browsers;
+            item.eye.style.filter = "alpha(opacity=50)"; //For IE;
+            item.eye.style.display = "none";
+            item.appendChild(item.eye);
             item.querySelectorAll('input')[0].addEventListener('keydown', (e) => {
-                eyeShown = true;
-                loseFocus = false;
-                if (!isFirstTimeFocus) {
-                    loseFocus = true;
+                item.eyeShown = true;
+                item.loseFocus = false;
+                if (!item.isFirstTimeFocus) {
+                    item.loseFocus = true;
                 }
-                checkEyeValue();
+                item.checkEyeValue();
             });
             item.querySelectorAll('input')[0].addEventListener('blur', (e) => {
-                loseFocus = true;
-                isFromBlur = true;
-                checkEyeValue();
+                item.loseFocus = true;
+                item.isFromBlur = true;
+                item.checkEyeValue();
             });
-            eye.addEventListener('mousedown', (e) => {
-                if (eyeShown === true && loseFocus === false && isFirstTimeFocus === true) {
+            item.eye.addEventListener('mousedown', (e) => {
+                if (item.eyeShown === true && item.loseFocus === false && item.isFirstTimeFocus === true) {
                     item.querySelectorAll('input')[0].setAttribute('type', 'text');
                 }
             });
-            eye.addEventListener('mouseup', (e) => {
+            item.eye.addEventListener('mouseup', (e) => {
                 item.querySelectorAll('input')[0].setAttribute('type', 'password');
                 item.querySelectorAll('input')[0].focus();
-                loseFocus = false;
-                checkEyeValue();
+                item.loseFocus = false;
+                item.checkEyeValue();
             });
             document.addEventListener('mouseup', (e) => {
-                if (e.target !== item && !item.contains(e.target)) {
-                    loseFocus = true;
-                    isFirstTimeFocus = false;
-                    checkEyeValue();
+                if (e.target !== item && !item.contains(e.target) && item.eyeShown === true) {
+                    item.loseFocus = true;
+                    item.isFirstTimeFocus = false;
+                    item.checkEyeValue();
                 }
-
             });
-            function checkEyeValue() {
-                if (!isFromBlur) {
-                    if (eyeShown === true && loseFocus === false) {
-                        eye.style.display = "block";
+            item.checkEyeValue = function() {
+                if (!item.isFromBlur) {
+                    if (item.eyeShown === true && item.loseFocus === false) {
+                        item.eye.style.display = "block";
                     } else {
-                        eye.style.display = "none";
+                        item.eye.style.display = "none";
                     }
                 }
                 else {
-                    isFromBlur = false;
+                    item.isFromBlur = false;
                 }
             }
         });
