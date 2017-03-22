@@ -48,8 +48,10 @@ window.onload = function () {
                 if (!item.isFromBlur) {
                     if (item.eyeShown === true && item.loseFocus === false) {
                         item.eye.style.display = "block";
+                        item.eye.setAttribute('aria-hidden', 'false');
                     } else {
                         item.eye.style.display = "none";
+                        item.eye.setAttribute('aria-hidden', 'true');
                     }
                 }
                 else {
