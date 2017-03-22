@@ -11,7 +11,7 @@ window.onload = function () {
             eye.setAttribute('aria-hidden', 'true');
             eye.style.opacity = .5; //For real browsers;
             eye.style.filter = "alpha(opacity=50)"; //For IE;
-            eye.style.visibility = "hidden";
+            eye.style.display = "none";
             item.appendChild(eye);
             item.querySelectorAll('input')[0].addEventListener('keydown', (e) => {
                 eyeShown = true;
@@ -48,9 +48,9 @@ window.onload = function () {
             function checkEyeValue() {
                 if (!isFromBlur) {
                     if (eyeShown === true && loseFocus === false) {
-                        eye.style.visibility = "visible";
+                        eye.style.display = "block";
                     } else {
-                        eye.style.visibility = "hidden";
+                        eye.style.display = "none";
                     }
                 }
                 else {
