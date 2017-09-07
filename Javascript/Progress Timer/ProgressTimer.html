@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <script src="ProgressTimer.js"></script>
+    </head>
+    <body>
+        <canvas width="700px" height="600px" id="myTimer"/>
+    </body>
+    <script>
+        window.onload =  function() {
+            let obj = {
+                count: 120,
+                countFormat: 'HH:MM:SS',//'MM:SS','plainNumber'
+                baseColor: 'grey',
+                animationColor: 'green',
+                completedAnimationColor: 'red',
+                fontColor: 'green',
+                completeFontColor: 'red',
+                reverse: false,
+                baseWidth: 20,
+                ringWidth: 20,
+                fontSize: '12px'
+            };
+            document.progressTimer('myTimer', obj);
+        }
+    </script>
+</html>
