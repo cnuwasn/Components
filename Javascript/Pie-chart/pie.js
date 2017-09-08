@@ -1,10 +1,9 @@
 document.pie = function(id, obj) {
     var pie = document.getElementById(id);
-    var width = pie.width;
-    var height = pie.height;
-    var centerX = width/2;
-    var centerY = height/2;
-    var outercircleRadius = obj.radius;
+    var centerX = pie.width/2;
+    var centerY = pie.height/2;
+	var inputradius = obj.radius;
+    var outercircleRadius = (((centerX>centerY)?centerY:centerX)>inputradius)?inputradius:((centerX>centerY)?centerY:centerX);
     var contextEl = pie.getContext("2d");
 	var tickColor,sliceAngle;
 	var startAngle = obj.startangle;
