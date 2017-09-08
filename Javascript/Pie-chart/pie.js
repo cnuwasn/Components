@@ -6,13 +6,13 @@ document.pie = function(id, obj) {
     var outercircleRadius = (((centerX>centerY)?centerY:centerX)>inputradius)?inputradius:((centerX>centerY)?centerY:centerX);
     var contextEl = pie.getContext("2d");
 	var tickColor,sliceAngle;
-	var startAngle = obj.startangle;
+	var startAngle = obj.startAngle;
 	var endAngle = degreesToRadians(startAngle);
 	drawPieChart();
 	function drawPieChart() {
 		for (var i = 0, l = obj.ranges.length; i < l; i++) {
 			tickColor = obj.ranges[i].color,
-			sliceAngle = obj.circleangle / 100 * obj.ranges[i].size,
+			sliceAngle = obj.sweepAngle / 100 * obj.ranges[i].size,
 			startAngle = endAngle,
 			endAngle = endAngle + degreesToRadians(sliceAngle),
 			drawPie(contextEl,obj);
