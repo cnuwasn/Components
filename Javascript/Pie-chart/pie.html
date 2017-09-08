@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <script src="pie.js"></script>
+    </head>
+    <body>
+        <canvas width="700px" height="600px" id="Pie"/>
+    </body>
+    <script>
+        window.onload =  function(){
+			var obj = [
+			{size:20, color: '#ff0000'},
+			{size:10, color: '#ffff00'},
+			{size:10, color: '#000000'},
+			{size:10, color: '#ff0000'},
+			{size:10, color: '#ffff00'},
+			{size:10, color: '#000000'}, 
+			{size:10, color: '#ffff00'},
+			{size:10, color: '#ff0000'},
+			{size:10, color: '#000000'}
+			];
+            document.pie('Pie',obj);
+        }
+    </script>
+</html>
