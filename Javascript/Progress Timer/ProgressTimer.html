@@ -3,24 +3,228 @@
         <script src="ProgressTimer.js"></script>
     </head>
     <body>
-        <canvas width="700px" height="600px" id="myTimer"/>
+        <canvas width="200px" height="200px" id="myTimer1"></canvas>
+        <canvas width="200px" height="200px" id="myTimer2"></canvas>
+        <canvas width="200px" height="200px" id="myTimer3"></canvas>
+        <canvas width="200px" height="200px" id="myTimer4"></canvas>
+        <canvas width="200px" height="200px" id="myTimer5"></canvas>
+        <canvas width="200px" height="200px" id="myTimer6"></canvas>
+        <canvas width="200px" height="200px" id="myTimer7"></canvas>
+        <canvas width="200px" height="200px" id="myTimer8"></canvas>
+        <canvas width="200px" height="200px" id="myTimer9"></canvas>
+        <canvas width="200px" height="200px" id="myTimer10"></canvas>
+        <canvas width="200px" height="200px" id="myTimer11"></canvas>
+        <canvas width="200px" height="200px" id="myTimer12"></canvas>
     </body>
     <script>
         window.onload =  function() {
-            let obj = {
-                count: 120,
-                countFormat: 'HH:MM:SS',//'MM:SS','plainNumber'
-                baseColor: 'grey',
-                animationColor: 'green',
-                completedAnimationColor: 'red',
-                fontColor: 'green',
-                completeFontColor: 'red',
-                reverse: false,
-                baseWidth: 20,
+            let obj1 = {
+                radius:80,
+                count: 20,
+                countFormat: 'MM:SS',//'MM:SS','HH:MM:SS','plainNumber'
+                baseColor: '#31526f',
+                animationColor: '#40a6ec',
+                completedAnimationColor: '#ced9dd',
+                completeFontColor: '#ced9dd',
+                fontColor: '#255b7f',
+                reverseCount: true,
+                baseWidth: 22,
                 ringWidth: 20,
-                fontSize: '12px'
+                fontSize: '28px',
+                startAngle: 270,
+                rotateDirection: 'Clockwise'//'counterClockwise'//'Clockwise'
             };
-            document.progressTimer('myTimer', obj);
+            document.progressTimer('myTimer1', obj1);
+            let obj2 = {
+                radius:80,
+                count: 20,
+                countFormat: 'HH:MM:SS',//'MM:SS','HH:MM:SS','plainNumber'
+                baseColor: '#31526f',
+                animationColor: '#40a6ec',
+                completedAnimationColor: '#ced9dd',
+                completeFontColor: '#ced9dd',
+                fontColor: '#255b7f',
+                reverseCount: true,
+                baseWidth: 22,
+                ringWidth: 20,
+                fontSize: '28px',
+                startAngle: 270,
+                rotateDirection: 'Clockwise'//'counterClockwise'//'Clockwise'
+            };
+            document.progressTimer('myTimer2', obj2);
+            let obj3 = {
+                radius:80,
+                count: 20,
+                countFormat: 'plainNumber',//'MM:SS','HH:MM:SS','plainNumber'
+                baseColor: '#31526f',
+                animationColor: '#40a6ec',
+                // completedAnimationColor: '#ced9dd',
+                // completeFontColor: '#ced9dd',
+                fontColor: '#255b7f',
+                reverseCount: true,
+                baseWidth: 22,
+                ringWidth: 20,
+                fontSize: '28px',
+                startAngle: 270,
+                rotateDirection: 'Clockwise'//'counterClockwise'//'Clockwise'
+            };
+            document.progressTimer('myTimer3', obj3);
+            let obj4 = {
+                radius:80,
+                count: 20,
+                countFormat: 'MM:SS',//'MM:SS','HH:MM:SS','plainNumber'
+                baseColor: '#31526f',
+                animationColor: '#40a6ec',
+                //completedAnimationColor: '#ced9dd',
+                completeFontColor: '#ced9dd',
+                fontColor: '#255b7f',
+                reverseCount: true,
+                baseWidth: 22,
+                ringWidth: 20,
+                fontSize: '28px',
+                startAngle: 270,
+                rotateDirection: 'Clockwise'//'counterClockwise'//'Clockwise'
+            };
+            document.progressTimer('myTimer4', obj4);
+            let obj5 = {
+                radius:80,
+                count: 20,
+                countFormat: 'MM:SS',//'MM:SS','HH:MM:SS','plainNumber'
+                baseColor: '#31526f',
+                animationColor: '#40a6ec',
+                completedAnimationColor: '#ced9dd',
+                //completeFontColor: '#ced9dd',
+                fontColor: '#255b7f',
+                reverseCount: true,
+                baseWidth: 22,
+                ringWidth: 20,
+                fontSize: '28px',
+                startAngle: 270,
+                rotateDirection: 'Clockwise'//'counterClockwise'//'Clockwise'
+            };
+            document.progressTimer('myTimer5', obj5);
+            let obj6 = {
+                radius:80,
+                count: 20,
+                countFormat: 'MM:SS',//'MM:SS','HH:MM:SS','plainNumber'
+                baseColor: '#31526f',
+                animationColor: '#40a6ec',
+                completedAnimationColor: '#ced9dd',
+                completeFontColor: '#ced9dd',
+                fontColor: '#255b7f',
+                reverseCount: false,
+                baseWidth: 22,
+                ringWidth: 20,
+                fontSize: '28px',
+                startAngle: 270,
+                rotateDirection: 'Clockwise'//'counterClockwise'//'Clockwise'
+            };
+            document.progressTimer('myTimer6', obj6);
+            let obj7 = {
+                radius:80,
+                count: 20,
+                countFormat: 'MM:SS',//'MM:SS','HH:MM:SS','plainNumber'
+                baseColor: '#31526f',
+                animationColor: '#40a6ec',
+                completedAnimationColor: '#ced9dd',
+                completeFontColor: '#ced9dd',
+                fontColor: '#255b7f',
+                reverseCount: true,
+                baseWidth: 22,
+                ringWidth: 20,
+                fontSize: '28px',
+                startAngle: 270,
+                rotateDirection: 'counterClockwise'//'counterClockwise'//'Clockwise'
+            };
+            document.progressTimer('myTimer7', obj7);
+            let obj8 = {
+                radius:80,
+                count: 20,
+                countFormat: 'MM:SS',//'MM:SS','HH:MM:SS','plainNumber'
+                baseColor: '#31526f',
+                animationColor: '#40a6ec',
+                completedAnimationColor: '#ced9dd',
+                completeFontColor: '#ced9dd',
+                fontColor: '#255b7f',
+                reverseCount: true,
+                baseWidth: 22,
+                ringWidth: 20,
+                fontSize: '28px',
+                startAngle: 0,
+                rotateDirection: 'Clockwise'//'counterClockwise'//'Clockwise'
+            };
+            document.progressTimer('myTimer8', obj8);
+            let obj9 = {
+                radius:80,
+                count: 20,
+                countFormat: 'MM:SS',//'MM:SS','HH:MM:SS','plainNumber'
+                baseColor: '#31526f',
+                animationColor: '#40a6ec',
+                completedAnimationColor: '#ced9dd',
+                completeFontColor: '#ced9dd',
+                fontColor: '#255b7f',
+                reverseCount: true,
+                baseWidth: 22,
+                ringWidth: 20,
+                fontSize: '28px',
+                startAngle: 0,
+                rotateDirection: 'counterClockwise'//'counterClockwise'//'Clockwise'
+            };
+            document.progressTimer('myTimer9', obj9);
+            let obj10 = {
+                radius:50,
+                count: 20,
+                showCount:false,
+                countFormat: 'MM:SS',//'MM:SS','HH:MM:SS','plainNumber'
+                baseColor: '#31526f',
+                animationColor: '#40a6ec',
+                completedAnimationColor: '#ced9dd',
+                completeFontColor: '#ced9dd',
+                fontColor: '#255b7f',
+                reverseCount: true,
+                baseWidth: 72,
+                ringWidth: 70,
+                fontSize: '28px',
+                startAngle: 270,
+                rotateDirection: 'counterClockwise'//'counterClockwise'//'Clockwise'
+            };
+            document.progressTimer('myTimer10', obj10);
+            let obj11 = {
+                radius:50,
+                count: 20,
+                showCount:false,
+                countFormat: 'MM:SS',//'MM:SS','HH:MM:SS','plainNumber'
+                baseColor: '#31526f',
+                animationColor: '#40a6ec',
+                completedAnimationColor: '#ced9dd',
+                completeFontColor: '#ced9dd',
+                fontColor: '#255b7f',
+                reverseCount: true,
+                baseWidth: 72,
+                ringWidth: 70,
+                fontSize: '28px',
+                startAngle: 270,
+                rotateDirection: 'Clockwise'//'counterClockwise'//'Clockwise'
+            };
+            document.progressTimer('myTimer11', obj11);
+            let obj12 = {
+                radius:50,
+                count: 20,
+                countFormat: 'MM:SS',//'MM:SS','HH:MM:SS','plainNumber'
+                baseColor: '#31526f',
+                delimiter: '-',
+                animationColor: '#40a6ec',
+                completedAnimationColor: '#ced9dd',
+                completeFontColor: '#FFF',
+                fontColor: '#FFF',
+                reverseCount: true,
+                baseWidth: 100,
+                ringWidth: 100,
+                fontSize: '28px',
+                startAngle: 270,
+                rotateDirection: 'Clockwise'//'counterClockwise'//'Clockwise'
+            };
+            document.progressTimer('myTimer12', obj12);
         }
     </script>
 </html>
