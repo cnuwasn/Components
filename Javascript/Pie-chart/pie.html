@@ -7,7 +7,11 @@
     </body>
     <script>
         window.onload =  function(){
-			var obj = [
+			var obj = {
+			radius:100,
+			startangle:180,
+			circleangle:180,
+			ranges:[
 			{size:20, color: '#ff0000'},
 			{size:10, color: '#ffff00'},
 			{size:10, color: '#000000'},
@@ -17,7 +21,7 @@
 			{size:10, color: '#ffff00'},
 			{size:10, color: '#ff0000'},
 			{size:10, color: '#000000'}
-			];
+			]};
             document.pie('Pie',obj);
         }
     </script>
