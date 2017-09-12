@@ -1,0 +1,97 @@
+body {
+    font-family: 'Alegreya Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+.container {
+    width: 100%;
+    margin: 10px auto; 
+    overflow-x:hidden;
+    min-width: 300px;
+}
+.progressbar {
+    margin: 0 auto;
+    padding: 0;
+    counter-reset: step;
+    width: 990px;
+    height: 80px;
+}
+.progressbar li {
+    list-style-type: none;
+    width: 110px;
+    float: left;
+    font-size: 12px;
+    font-weight: bold;
+    position: relative;
+    text-align: center;
+    color: #333;
+}
+.progressbar li:before {
+    width: 50px;
+    height: 42px;
+    line-height: 30px;
+    border: 2px solid #7d7d7d;
+    display: block;
+    text-align: center;
+    margin: 0px auto 10px auto;
+    border-radius: 50%;
+    color: white;
+    font-size: 25px;
+    padding-top: 10px;
+}
+.progressbar li:after {
+    width: 100%;
+    height: 3px;
+    content: '';
+    position: absolute;
+    background-color: #7d7d7d;
+    top: 25px;
+    left: -50%;
+    z-index: -1;
+}
+.progressbar li:first-child:after {
+    content: none;
+}
+.progressbar li.active:before {
+    border-width: 1px;
+    border-color: #EB8E02;
+    background-color: #EBCB27;
+}
+.progressbar li.active:after {
+    background-color: #EBCB27;
+}
+.progressbar li.completed:before {
+    border-width: 1px;
+    border-color: #008542;
+    background-color: #8FD724;
+}
+.progressbar li.completed:after {
+    background-color: #8FD724;
+}
+.progressbar li.todo:before {
+    border-width: 1px;
+    border-color: #8c8c8c;
+    background-color: #B9B9B9;
+}
+.progressbar li.todo:after {
+    background-color: #B9B9B9;
+}
+.panner {
+    opacity: 0.4;
+    display:block;
+    position: absolute;
+    top: 95px;
+    border-radius: 50%;
+}
+.panner.fa {
+    font-size: 30px;
+}
+.active {
+    color:red;
+}
+#panLeft {
+    left:0px;
+}
+#panRight {
+    right:0px;
+}

@@ -1,0 +1,102 @@
+/* Styles go here */
+.stage-container {
+    -webkit-flex-flow: row wrap;
+    border-bottom: 1px solid #dadada;
+    padding: 15px 0 4px;
+    display: flex;
+    justify-content: center;
+}
+.stage {
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    min-height: 112px;
+    width: 110px;
+}
+.stage-title{
+    font-size: 12px;
+    word-wrap: break-word;
+}
+.stage-header {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    background-color: #eaeaea;
+    text-align: center;
+    font-size: 20px;
+    color: #a9a9a9;
+    border: 1px solid #d9d9d9;
+    position: relative;
+    z-index: 1;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+}
+.stage:not(:first-of-type):before, .stage:not(:last-of-type):after {
+    position: absolute;
+    background-color: #eaeaea;
+    top: 55px;
+    margin-top: -33px;
+    width: 50%;
+    height: 5px;
+    border-top: 1px solid #d9d9d9;
+    border-bottom: 1px solid #d9d9d9;
+    content: '';
+}
+.stage:after {
+    right: 0;
+}
+.stage:before {
+    left: 0;
+}
+.stage:before, .stage:after {
+    background-color: #eaeaea;
+}
+.stage.tmm-current:after,.stage.tmm-current:before {
+    background-color: #EBCB27;
+}
+.stage.tmm-current .stage-header {
+    background-color: #EBCB27;
+    color:white;
+    border-color: #E0AC22;
+}
+.stage.tmm-current:after, .stage.tmm-current:before {
+    background-color: #EBCB27;
+    border: none;
+}
+.stage.tmm-completed:after,.stage.tmm-completed:before {
+    background-color: #8FD724;
+}
+.stage.tmm-completed .stage-header {
+    background-color: #8FD724;
+    color:white;
+    border-color: #5FA33E;
+}
+.stage.tmm-completed:after, .stage.tmm-completed:before {
+    background-color: #8FD724;
+    border: none;
+}
+.stage.tmm-todo:after,.stage.tmm-todo:before {
+    background-color: #B9B9B9;
+}
+.stage.tmm-todo .stage-header {
+    background-color: #B9B9B9;
+    color:white;
+    border-color: #8D8D8D;
+}
+.stage.tmm-todo:after, .stage.tmm-todo:before {
+    background-color: #B9B9B9;
+    border: none;
+}
+.fa:before{
+    position: absolute;
+    top: 28%;
+    left: 15px;
+}
+.fa {
+  font-size: 20px !important;
+}
+@media screen and (max-width: 959px) {
+    .stage:after, .stage:before {
+        display: none !important;
+    }
+}
