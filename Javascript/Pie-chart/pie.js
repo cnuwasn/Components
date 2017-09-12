@@ -37,6 +37,7 @@ document.pie = function (id, obj) {
 		contextEl.clearRect(0, 0, pie.width, pie.height);
 		if (obj.enableAnimation && sweep >= obj.sweepAngle && drawRadius >= outercircleRadius ) {
 			drawRadius = outercircleRadius;
+			sweep = obj.sweepAngle;
 			clearInterval(startAnimation);
 			if (obj.dropShadow)
 				drawShadow();
