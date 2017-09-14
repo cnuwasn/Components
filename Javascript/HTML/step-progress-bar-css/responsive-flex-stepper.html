@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Responsive Flex Stepper</title>
+    <meta chartset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body,
+        html {
+            font-family: 'Alegreya Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .stepper-wrapper {
+            width: 80%;
+            margin: 10px auto;
+            min-width: 300px;
+            position: relative;
+        }
+
+        .stepper-inner-wrap {
+            overflow-x: hidden;
+        }
+
+        .stepper {
+            padding: 0;
+            display: flex;
+            justify-content: space-between;
+            background-color: #326295;
+        }
+
+        .stepper li {
+            list-style-type: none;
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-width: 118px;
+            font-size: 13px;
+            font-weight: bold;
+            position: relative;
+            text-align: center;
+            color: #ffffff;
+            background-color: #326295;
+            padding: 1rem 1rem 1.5rem;         
+        }
+
+        .stepper li::before {
+            content: "";
+            width: 13px;
+            height: 13px;
+            background-color: #f2a900;
+            display: block;
+            border-radius: 50%;
+            position: absolute;
+            z-index: 1;
+            bottom: -5px;
+        }
+        .stepper li.highlight::before {
+            width: 15px;
+            height: 15px;
+            bottom: -9px;
+            border: 2px solid #f2a900;
+            background-color: #00263e;
+        }
+        .stepper li::after {
+            width: 100%;
+            height: 3px;
+            content: '';
+            position: absolute;
+            background-color: #f2a900;
+            bottom: 0;
+            left: -50%;
+        }
+
+        .stepper li:first-child::after {
+            content: none;
+        }
+        .step-items.active ~ .step-items{
+            color: #b7b7b7;
+        }
+        .step-items.active ~ .step-items::after, .step-items.active ~ .step-items::before{
+            background-color: #d7d7d7;
+        }
+        .step-items.active ~ .step-items.highlight::before{
+            border: 2px solid #d7d7d7;
+            background-color: #b7b7b7;
+        }
+        .arrows {
+            position: absolute;
+            color: #f2a900;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        span.arrows.arrow-left {
+            top: 36px;
+            left: -30px;
+        }
+
+        span.arrows.arrow-right {
+            right: -30px;
+            top: 36px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="stepper-wrapper">
+        <div class="stepper-inner-wrap">
+            <ul class="stepper">
+                <li class="step-items highlight">PREQUAL</li>
+                <li class="step-items active">Enter Savings</li>
+                <li class="step-items">Enter Expenses</li>
+                <li class="step-items highlight">Enter Income</li>
+                <li class="step-items">APPLY</li>
+                <li class="step-items">Provide documentation</li>
+                <li class="step-items">Laurel Road review</li>
+                <li class="step-items">CD Acknowledged</li>
+                <li class="step-items">Loan Funded</li>
+            </ul>
+            <span class="arrows arrow-left" data-scroll-modifier='-1'><</span>
+            <span class="arrows arrow-right" data-scroll-modifier='1'>></span>
+        </div>
+    </div>
+    <script>
+        var reAdjust;
+        window.onload = function () {
+            var scrollHandle = 0,
+                scrollStep = 5,
+                parent = document.getElementsByClassName("stepper-inner-wrap")[0],
+                arrows = document.querySelectorAll(".arrows"),
+                stepItems = document.getElementsByClassName("step-items");
+
+            var widthOfList = function () {
+                var itemsWidth = 0;
+                for (var i = 0; i < stepItems.length; i++) {
+                    var itemWidth = stepItems[i].getBoundingClientRect().width;
+                    itemsWidth += itemWidth;
+                }
+                return itemsWidth;
+            };
+
+            reAdjust = function () {
+                if (parseInt(document.getElementsByClassName("stepper")[0].getBoundingClientRect().width, 10) < parseInt(widthOfList(), 10)) {
+                    document.getElementsByClassName("arrow-left")[0].style.display = "block";
+                    document.getElementsByClassName("arrow-right")[0].style.display = "block";
+                }
+                else {
+                    document.getElementsByClassName("arrow-left")[0].style.display = "none";
+                    document.getElementsByClassName("arrow-right")[0].style.display = "none";
+                }
+            };
+            reAdjust();
+            //attach event to handle horizontal scroll
+            for (var i = 0; i < arrows.length; i++) {
+                //Start the scrolling process
+                ('mousedown touchstart'.split(' ')).forEach((e) => {
+                    arrows[i].addEventListener(e, function () {
+                        var data = this.getAttribute("data-scroll-modifier"),
+                            direction = parseInt(data, 10);
+                        this.classList.add('active');
+                        startScrolling(direction, scrollStep);
+                    });
+                });
+                //Kill the scrolling
+                ('mouseup touchend'.split(' ')).forEach((e) => {
+                    arrows[i].addEventListener(e, function () {
+                        stopScrolling();
+                        this.classList.remove('active');
+                    });
+                });
+            }
+            //Actual handling of the scrolling
+            function startScrolling(modifier, step) {
+                if (scrollHandle === 0) {
+                    scrollHandle = setInterval(function () {
+                        var newOffset = parent.scrollLeft + (scrollStep * modifier);
+                        parent.scrollLeft = newOffset;
+                    }, 10);
+                }
+            }
+            function stopScrolling() {
+                clearInterval(scrollHandle);
+                scrollHandle = 0;
+            }
+        };
+        window.onresize = function () {
+            reAdjust();
+        }
+    </script>
+</body>
+
+</html>
