@@ -1,0 +1,11 @@
+canvas {
+    background-image: url("images/bg.jpg");
+    -webkit-background-image: url("images/bg.jpg");
+    background-repeat: no-repeat;
+}
+.wrapper {
+    width: 500px;
+}
+.hide {
+    display: none;
+}
