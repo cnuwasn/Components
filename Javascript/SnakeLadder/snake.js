@@ -3,25 +3,30 @@ window.onload = function () {
     var ctx = canvas.getContext("2d");
     var button = document.getElementById('trigger');
     var numberOfPlayers = 2;
+    var inCompleteList = numberOfPlayers;
     var currentplayerIndex = 0;
-    var colorOrder=['red','blue','yellow','grey'];
+    var colorOrder=['red','blue','yellow','green'];
     var playerValueIndex = [0,0,0,0];
     var pointPosition= {5:35,9:51,23:42,48:86,69:91,62:83,82:20,95:38,87:66,56:8,49:7,36:5};
     button.addEventListener('click', function(){
          var currentValue = Math.floor(Math.random() * 6) + 1;
-         document.getElementById('ludoValue').innerHTML = currentValue;
-         updateBoard(currentValue);
-         checkSnakeOrLadder();
+         button.className = 'dice-'+colorOrder[currentplayerIndex]+'-'+currentValue;
+         setTimeout(function(){
+            updateBoard(currentValue);
+            checkSnakeOrLadder();
+            if(inCompleteList.length > 1){
+                button.className = 'dice-'+colorOrder[currentplayerIndex];
+            }
+         },1000);
     });
     var reset = document.getElementById('reset');
     reset.addEventListener('click', function(){
         ctx.clearRect(0, 0, 500, 500);
         document.getElementById('reset').classList.add('hide');
-        document.getElementById('ludoValue').classList.remove('hide');
-        document.getElementById('ludoValue').innerHTML='';
         document.getElementById('trigger').classList.remove('hide');
         playerValueIndex=[0,0,0,0];
         currentplayerIndex = 0;
+        button.className = 'dice-red';
     });
     function drawPin(pin){
         ctx.save();
@@ -47,7 +52,7 @@ window.onload = function () {
             playerValueIndex[currentplayerIndex] = playerValueIndex[currentplayerIndex] + currentValue > 100 ? playerValueIndex[currentplayerIndex] : playerValueIndex[currentplayerIndex] + currentValue;
             drawBoard();
         }
-        var inCompleteList = playerValueIndex.slice(0, numberOfPlayers).filter(function(value){
+        inCompleteList = playerValueIndex.slice(0, numberOfPlayers).filter(function(value){
             return value < 100;
         })
         if(inCompleteList.length > 1){
@@ -57,7 +62,6 @@ window.onload = function () {
             while (playerValueIndex[currentplayerIndex] === 100);
         }
         else {
-            document.getElementById('ludoValue').classList.add('hide');
             document.getElementById('trigger').classList.add('hide');
             document.getElementById('reset').classList.remove('hide');
         }
@@ -102,7 +106,7 @@ window.onload = function () {
             Object.keys(pointPosition).forEach(function(key,objIndex) {
                 if(parseInt(key) === val){
                     playerValueIndex[index] = pointPosition[key];
-                    setTimeout(drawBoard, 1000);
+                    setTimeout(drawBoard, 500);
                 }
             });
         });

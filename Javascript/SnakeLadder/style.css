@@ -9,3 +9,96 @@ canvas {
 .hide {
     display: none;
 }
+#trigger {
+    height: 100px;
+    width: 100px;
+    display: block;
+    background-repeat: no-repeat;
+}
+#trigger.hide {
+    display: none;
+}
+.dice-blue{
+    background-image: url("images/dice-blue.png")
+}
+.dice-blue-1{
+    background-image: url("images/dice-blue-1.png")
+}
+.dice-blue-2{
+    background-image: url("images/dice-blue-2.png")
+}
+.dice-blue-3{
+    background-image: url("images/dice-blue-3.png")
+}
+.dice-blue-4{
+    background-image: url("images/dice-blue-4.png")
+}
+.dice-blue-5{
+    background-image: url("images/dice-blue-5.png")
+}
+.dice-blue-6{
+    background-image: url("images/dice-blue-6.png")
+}
+.dice-red{
+    background-image: url("images/dice-red.png")
+}
+.dice-red-1{
+    background-image: url("images/dice-red-1.png")
+}
+.dice-red-2{
+    background-image: url("images/dice-red-2.png")
+}
+.dice-red-3{
+    background-image: url("images/dice-red-3.png")
+}
+.dice-red-4{
+    background-image: url("images/dice-red-4.png")
+}
+.dice-red-5{
+    background-image: url("images/dice-red-5.png")
+}
+.dice-red-6{
+    background-image: url("images/dice-red-6.png")
+}
+.dice-yellow{
+    background-image: url("images/dice-yellow.png")
+}
+.dice-yellow-1{
+    background-image: url("images/dice-yellow-1.png")
+}
+.dice-yellow-2{
+    background-image: url("images/dice-yellow-2.png")
+}
+.dice-yellow-3{
+    background-image: url("images/dice-yellow-3.png")
+}
+.dice-yellow-4{
+    background-image: url("images/dice-yellow-4.png")
+}
+.dice-yellow-5{
+    background-image: url("images/dice-yellow-5.png")
+}
+.dice-yellow-6{
+    background-image: url("images/dice-yellow-6.png")
+}
+.dice-grey{
+    background-image: url("images/dice-grey.png")
+}
+.dice-grey-1{
+    background-image: url("images/dice-grey-1.png")
+}
+.dice-grey-2{
+    background-image: url("images/dice-grey-2.png")
+}
+.dice-grey-3{
+    background-image: url("images/dice-grey-3.png")
+}
+.dice-grey-4{
+    background-image: url("images/dice-grey-4.png")
+}
+.dice-grey-5{
+    background-image: url("images/dice-grey-5.png")
+}
+.dice-grey-6{
+    background-image: url("images/dice-grey-6.png")
+}
