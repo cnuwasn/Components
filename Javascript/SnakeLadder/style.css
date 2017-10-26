@@ -10,10 +10,11 @@ canvas {
     display: none;
 }
 #trigger {
-    height: 100px;
-    width: 100px;
+    height: 80px;
+    width: 80px;
     display: block;
     background-repeat: no-repeat;
+    background-size: cover;
 }
 #trigger.hide {
     display: none;

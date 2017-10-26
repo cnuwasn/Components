@@ -11,11 +11,13 @@ window.onload = function () {
     button.addEventListener('click', function(){
          var currentValue = Math.floor(Math.random() * 6) + 1;
          button.className = 'dice-'+colorOrder[currentplayerIndex]+'-'+currentValue;
+         button.style.pointerEvents = "none";
          setTimeout(function(){
             updateBoard(currentValue);
             checkSnakeOrLadder();
             if(inCompleteList.length > 1){
                 button.className = 'dice-'+colorOrder[currentplayerIndex];
+         button.style.pointerEvents = "auto";
             }
          },1000);
     });
