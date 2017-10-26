@@ -82,23 +82,23 @@ canvas {
     background-image: url("images/dice-yellow-6.png")
 }
 .dice-green{
-    background-image: url("images/dice-grey.png")
+    background-image: url("images/dice-green.png")
 }
 .dice-green-1{
-    background-image: url("images/dice-grey-1.png")
+    background-image: url("images/dice-green-1.png")
 }
 .dice-green-2{
-    background-image: url("images/dice-grey-2.png")
+    background-image: url("images/dice-green-2.png")
 }
 .dice-green-3{
-    background-image: url("images/dice-grey-3.png")
+    background-image: url("images/dice-green-3.png")
 }
 .dice-green-4{
-    background-image: url("images/dice-grey-4.png")
+    background-image: url("images/dice-green-4.png")
 }
 .dice-green-5{
-    background-image: url("images/dice-grey-5.png")
+    background-image: url("images/dice-green-5.png")
 }
 .dice-green-6{
-    background-image: url("images/dice-grey-6.png")
+    background-image: url("images/dice-green-6.png")
 }
