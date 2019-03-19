@@ -1,0 +1,97 @@
+a > .drop-arrow{
+    color:white;
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+    -moz-transition: all .2s ease-in-out;
+    -webkit-transition: all .2s ease-in-out;
+    -ms-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;  
+}
+
+li a{
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 10px 15px;
+    font-size: 12px;
+}
+li:hover > a, li.active-parent > a, li a.menulink.active{
+    color: #ffcd11;
+}
+li{
+    background-color: #000;
+    display:block;
+    position: relative;
+}
+ul {
+    padding:0;
+}
+
+@media only screen and (min-width : 1025px) {
+    ul {
+        max-height:0px; 
+        opacity: 0;
+    }
+    li:hover > a + ul {
+        position: absolute;
+        top: 0px;
+        border: 1px solid wheat;
+        min-width: 160px;
+        max-height:500px;
+        opacity: 1;
+        -moz-transition: all .2s ease-in-out;
+        -webkit-transition: all .2s ease-in-out;
+        -ms-transition: all .2s ease-in-out;
+        -o-transition: all .2s ease-in-out;
+        transition: all .2s ease-in-out;  
+    }
+    li:hover > a + ul.open-right {
+        left: 100%;
+    }
+    li:hover > a + ul.open-left {
+        right: 100%;
+    }
+    li:hover > a > .drop-arrow {
+        -webkit-transform: rotate(270deg);
+        -moz-transform: rotate(270deg);
+        -o-transform: rotate(270deg);
+        -ms-transform: rotate(270deg);
+        transform: rotate(270deg);
+        -moz-transition: all .2s ease-in-out;
+        -webkit-transition: all .2s ease-in-out;
+        -ms-transition: all .2s ease-in-out;
+        -o-transition: all .2s ease-in-out;
+        transition: all .2s ease-in-out;  
+    }
+
+}
+@media only screen and (max-width : 1024px) {
+    li > a.active {
+        color: #ffcd11;
+    }
+    ul {
+        display: none;
+    }
+    li:hover > a + ul {
+        display: none;
+    }
+    li > a.active + ul,li:hover > a.active + ul {
+        display: block;
+    }
+    a.active > .drop-arrow{
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        transform: rotate(0deg);
+        -moz-transition: all .2s ease-in-out;
+        -webkit-transition: all .2s ease-in-out;
+        -ms-transition: all .2s ease-in-out;
+        -o-transition: all .2s ease-in-out;
+        transition: all .2s ease-in-out;  
+    }
+}

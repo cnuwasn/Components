@@ -1,0 +1,185 @@
+.horizontal-menu li {
+    display:inline-block;
+    padding:15px;
+    position: relative;
+}
+.menu-wrapper {
+    box-shadow: 0 0 0 9px #ffcd11, 0 0 0 15px #efd061, 0 0 0 20px #fbe286;
+}
+.menu-overlay {
+    position: fixed;
+    top:47px;
+    left:0;
+    z-index:9999999;
+    width: 100%;
+    background-color: rgba(0,0,0,0.3);
+    height: 100vh;
+}
+.horizontal-menu {
+    z-index: 10000000;
+}
+.horizontal-menu li:hover > a{
+    color: #ffcd11;
+}
+a > .drop-arrow {
+    color:white;
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+    -moz-transition: all .2s ease-in-out;
+    -webkit-transition: all .2s ease-in-out;
+    -ms-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;  
+}
+
+.horizontal-menu > li > a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 0px;
+    font-size: 16px;
+    font-weight: bold;
+    font-style: normal;
+}
+.horizontal-menu > li > a.active-link, .horizontal-menu > li.active-parent > a, .horizontal-menu > li > a.active{
+    color:#ffcd11;
+}
+.horizontal-menu li a {
+    color: white;
+    text-decoration: none;
+    font-family: un,"Arial Narrow",Arial,sans-serif;
+}
+ul.horizontal-menu {
+    list-style-type: none;
+    background-color: #000;
+    margin: 0;
+    padding: 5px 0px;
+    display: flex;
+    align-items: center;
+}
+
+ul.horizontal-menu ul {
+    position: absolute;
+    top:2.4em;
+    left:0;
+    padding-left: 0;
+    display:none;
+    list-style: none;
+}
+
+
+.responsive-hamburger {
+    float: right;
+    display: none;
+    flex-direction: column;
+    width: 27px;
+    height: 30px;
+    padding: 3px;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    font-size: 30px;
+    color: #fff;
+}
+.responsive-hamburger span {
+    background-color: white;
+    height: 3px;
+    margin: 3px;
+}
+
+@media only screen and (min-width: 1025px) {
+    .active-menu {
+        display: none;
+    }
+    .menu-wrapper > .app-logo {
+        display: none;
+    }
+    ul.horizontal-menu > li:hover > a.active-hover + ul {
+        display: block !important;
+        width: 100%;
+    }
+    ul.horizontal-menu > li:hover > a + ul {
+        display: none !important;
+    }
+    ul.horizontal-menu > li:hover > a > .drop-arrow {
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+}
+@media only screen and (max-width : 1024px) {    
+    .active-menu{
+        display: block;
+        color: #ffcd11;
+        font-size: 16px;
+        font-weight: bold;
+        font-style: normal;
+    }
+    .horizontal-menu li > a.active {
+        color: #ffcd11;
+    }
+    ul.horizontal-menu > li.app-logo {
+        display: none !important;
+    }
+    .horizontal-menu li a{
+        display: block;
+        padding:5px 0px;
+    }
+    ul.horizontal-menu > li:hover > a + ul {
+        display: none;
+    }
+    ul.horizontal-menu > li > a.active + ul {
+        display: block;
+        top:0.2rem;
+        margin: 0px -15px;
+    }
+    .responsive-hamburger {
+        display: flex;
+    }
+    .menu-wrapper {
+        display: flex;
+        flex-direction: row-reverse;
+        background-color: #000;
+        padding: 15px 5px;
+        justify-content: space-between;
+        align-items: center;
+    }
+    ul.horizontal-menu {
+        position: absolute;
+        display: none;
+        top: 68px;
+        right:0;
+        width: 240px;
+    }
+    .responsive-hamburger.active  + ul.horizontal-menu li {
+        display: list-item;
+        padding-bottom: 0;
+    }
+    .responsive-hamburger.active  + ul.horizontal-menu {
+        display: block;
+    }
+    ul.horizontal-menu ul {
+        position: relative;
+    }
+    a.active > .drop-arrow {
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        transform: rotate(0deg);
+        -moz-transition: all .2s ease-in-out;
+        -webkit-transition: all .2s ease-in-out;
+        -ms-transition: all .2s ease-in-out;
+        -o-transition: all .2s ease-in-out;
+        transition: all .2s ease-in-out;  
+    }
+}
+
+@media only screen and (max-width : 420px) {
+    ul.horizontal-menu {
+        width:100%;
+    }
+}

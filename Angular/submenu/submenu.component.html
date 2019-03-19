@@ -1,0 +1,13 @@
+
+<li *ngFor="let item of data; let i=index" [ngClass]="indexData && indexData.length > 0 && indexData[i] === true ?'active-parent':''" [routerLinkActive]="" #rla="routerLinkActive" >
+    <a [routerLinkActive]="'active'" *ngIf="!item.childrens || (item.childrens && item.childrens.length === 0)" class="menulink"  (click)="itemClick(i, true)" [routerLink]="[item[url]]">
+      {{item[label] | uppercase}}
+    </a>
+    <a [ngClass]="{'active': selectedIndex === i}" *ngIf="item.childrens && item.childrens.length > 0" class="parent" (click)="itemClick(i, false)" href="JavaScript:void(0);" >
+      {{item[label] | uppercase}}
+      <i class="fa fa-angle-down drop-arrow" aria-hidden="true"></i>
+    </a>
+    <ul *ngIf="item.childrens && item.childrens.length > 0" [ngClass]="(isRightSideOpen === true) ? 'open-right':'open-left'">
+        <menu-submenu [data]="item.childrens" [listIndex]="i" (isActive)="isActivatedRoute($event)" [isRightSideOpen]="!isRightSideOpen" (closeMainMenu)="closeMainMenuCaller()" [label]="'labels'" [url]="'routeUrl'"></menu-submenu>
+    </ul>
+</li>

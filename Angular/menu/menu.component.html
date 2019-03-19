@@ -1,0 +1,27 @@
+<div class="menu-wrapper">
+  <div *ngIf="hamburgerActive" class="menu-overlay" (click)="hideMenu()">
+  </div>
+  <div class="responsive-hamburger fa fa-bars" [ngClass]="{'active':hamburgerActive}" (click)="toggleActiveHamburger()">
+  </div>
+  <ul class="horizontal-menu">
+    <li class="app-logo"></li>
+    <li class="firstLevelli" *ngFor="let item of data; let i=index" [routerLinkActive]="" #rla="routerLinkActive" [ngClass]="isChildActive && parentListIndex === i ?'active-parent':''" (mouseover)="setHoverIndex(i)" (mouseout)="setHoverIndex(undefined)">
+      <a [routerLinkActive]="'active'" [ngClass]="{'active-hover': hoveredIndex === i, 'active-link': activeIndex === i}" 
+        *ngIf="!item.childrens || (item.childrens && item.childrens.length === 0)" 
+        class="menulink" [routerLink]="[item[url]]" (click)="toggleActive(i,false)">
+        {{item[label] | uppercase}}
+      </a>
+      <a [ngClass]="{'active': selectedIndex === i, 'active-hover': hoveredIndex === i, 'active-link': activeIndex === i}" 
+        *ngIf="item.childrens && item.childrens.length > 0" 
+        class="parent" href="JavaScript:void(0);" (click)="toggleActive(i,true)">
+        {{item[label] | uppercase}}
+        <i class="fa fa-angle-down drop-arrow" aria-hidden="true"></i>
+      </a>
+      <ul *ngIf="item.childrens.length > 0">
+        <menu-submenu [isRightSideOpen]="true" [listIndex]="i" (isActive)="isActivatedRoute($event)" (closeMainMenu)="closeHamburger()" [data]="item.childrens" [label]="'labels'" [url]="'routeUrl'"></menu-submenu>
+      </ul>
+    </li>
+  </ul>
+  <li class="active-menu">{{(activeIndex !== undefined ? data[activeIndex][label] : parentListIndex ? data[parentListIndex][label]: '') | uppercase }}</li>
+  <li class="app-logo"></li>
+</div>
