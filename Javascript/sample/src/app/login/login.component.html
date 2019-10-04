@@ -1,0 +1,16 @@
+<img class="display-none" src="assets/images/smile.png" />
+<img class="display-none" src="assets/images/shhh.png" />
+<div class="layout">
+  <div class="login-content">
+    <div class="canvas-wrapper">
+      <canvas #canvastag ></canvas>
+    </div>
+    <div class="panel">
+      <input [(ngModel)]="name" (focus)="userNameFocus()" (ngModelChange)="changeEvent($event)" type="text">
+      <input #password type="password" (focus)="passwordFocus()">
+      <label><input type="checkbox" [(ngModel)]="show" (ngModelChange)="showPwd($event)"/>Show Password</label>
+      <button class="btn-login">Login</button>
+    </div>
+  </div>
+</div>
+

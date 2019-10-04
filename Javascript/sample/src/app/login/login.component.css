@@ -1,0 +1,37 @@
+.layout{
+    width:100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.login-content{
+    width:300px;
+}
+.panel > * {
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+
+}
+.display-none{
+    display: none;
+}
+.canvas-wrapper{
+    width:100px;
+    margin: 0 auto;
+}
+.panel{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.btn-login{
+    padding:10px 5px;
+    margin-top: 15px !important;
+    background-color:orange;
+    border:none;    
+    cursor: pointer;
+}
+input{
+    padding:5px;
+}
