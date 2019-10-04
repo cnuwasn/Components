@@ -2,11 +2,11 @@ window.onload = function () {
     var canvas = document.getElementById('myCanvas');
     var ctx = canvas.getContext("2d");
     var button = document.getElementById('trigger');
-    var numberOfPlayers = 4;
-    var inCompleteList = numberOfPlayers;
+    var numberOfPlayers = getNumberOfPlayers();
+    var inCompleteList = [];
     var currentplayerIndex = 0;
-    var colorOrder=['red','blue','yellow','green'];
-    var playerValueIndex = [0,0,0,0];
+    var colorOrder=['red','blue','yellow','green'].slice(0, numberOfPlayers);
+    var playerValueIndex = [0,0,0,0].slice(0, numberOfPlayers);;
     var pointPosition= {5:35,9:51,23:42,48:86,69:91,62:83,82:20,95:38,87:66,56:8,49:7,36:5};
     button.addEventListener('click', function(){
          var currentValue = Math.floor(Math.random() * 6) + 1;
@@ -30,6 +30,14 @@ window.onload = function () {
         currentplayerIndex = 0;
         button.className = 'dice-red';
     });
+    function getNumberOfPlayers(){
+        var count = prompt("Number of Players", "2");
+        if(count > 4){
+            return 4;
+        } else {
+            return parseInt(count);
+        }
+    }
     function drawPin(pin){
         ctx.save();
         ctx.translate(pin.x,pin.y);
@@ -64,6 +72,7 @@ window.onload = function () {
             while (playerValueIndex[currentplayerIndex] === 100);
         }
         else {
+            alert("Great!!!....Finished!!!!");
             document.getElementById('trigger').classList.add('hide');
             document.getElementById('reset').classList.remove('hide');
         }

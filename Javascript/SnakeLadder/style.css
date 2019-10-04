@@ -5,13 +5,19 @@ canvas {
 }
 .wrapper {
     width: 500px;
+    margin: 0 auto;
 }
 .hide {
     display: none;
 }
+.flex-center{
+    display: flex;
+    justify-content: center;
+}
 #trigger {
     height: 80px;
     width: 80px;
+    border-radius: 20px;
     display: block;
     background-repeat: no-repeat;
     background-size: cover;
